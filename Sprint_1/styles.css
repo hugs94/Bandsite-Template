@@ -1,0 +1,378 @@
+body, html {
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1, .album-info__date {
+  font-size: 5.25rem;
+  font-weight: 700;
+}
+
+h2, .section--about .about__title, .section--music .music__title, .section--gallery .gallery__title, .section--contact .contact__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 3% 0;
+}
+
+h3, .album-info__text {
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+h4, .p1, .section--about .about .container--about .section__left--about .p1--left {
+  font-size: 1.5rem;
+}
+
+.p1 {
+  font-weight: 400;
+}
+
+.p2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.comments {
+  font-size: 0.875rem;
+}
+
+p {
+  margin: 0;
+}
+
+.usercomments {
+  font-size: 12px;
+}
+
+.buttonfont, button {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+button {
+  font-family: 'Poppins';
+}
+
+section, .section--contact {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 8%;
+}
+
+.section__right {
+  padding-right: 5%;
+  line-height: 2.2em;
+  display: flex;
+}
+
+.section__left {
+  padding-right: 8%;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 961px) {
+  .body {
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  .container--about {
+    flex-direction: column;
+  }
+  .container--about .section__left--about {
+    padding: 5% 0;
+  }
+  .container--music {
+    flex-direction: column;
+  }
+  .container--music .section__right--music {
+    padding: 5% 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container--about {
+    flex-direction: column;
+  }
+  .container--about .section__left--about {
+    padding: 5% 0;
+  }
+  .container--music {
+    flex-direction: column;
+  }
+  .container--music .section__right--music {
+    padding: 5% 0;
+  }
+}
+
+.header-hero {
+  background-image: url("Assets/Images/ana-grave-156852-unsplash.jpg");
+  height: 900px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-hero .navbar {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 2% 8%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.header-hero .navbar .navbar__links {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-hero .navbar .navbar__links .navbar__right-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-hero .navbar .navbar__links .navbar__right-side .navbar__far-right {
+  margin-right: 10%;
+  margin-left: 40%;
+  color: #D7D7D7;
+}
+
+.album-info {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+}
+
+.album-info__button-holder {
+  padding: 20px 40px;
+}
+
+.album-info__button-holder .album-info__button {
+  border: 4px solid #000000;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  height: 55px;
+  width: 198px;
+}
+
+.section--about .about .container--about .section__left--about {
+  line-height: 2em;
+}
+
+.section--about .about .container--about .section__left--about .p1--left {
+  font-weight: 700;
+}
+
+.section--music {
+  background-color: #F9F9F9;
+}
+
+.section--music .music .container--music {
+  padding-right: 10%;
+  align-items: stretch;
+}
+
+.section--music .music .container--music .section__left--bandcamp {
+  max-width: 326px;
+  max-height: 451px;
+}
+
+.section--music .music .container--music .section__right--music {
+  display: block;
+}
+
+.section--music .music .container--music .section__right--music .p1--music-bandname {
+  font-weight: 700;
+  display: inline;
+}
+
+.section--music .music .container--music .section__right--music .p1--music-album {
+  display: inline;
+}
+
+.section--gallery {
+  justify-content: center;
+}
+
+.section--gallery .gallery__grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 2% 0;
+}
+
+.section--gallery .gallery__grid .gallery__img-1 {
+  background-image: url("assets/Images/ian-dooley-281855-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-2 {
+  background-image: url("assets/Images/ana-grave-156852-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-3 {
+  background-image: url("assets/Images/hanny-naibaho-388579-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-4 {
+  background-image: url("assets/Images/bryan-minear-315773-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-5 {
+  background-image: url("assets/Images/mike-giles-5655-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-6 {
+  background-image: url("assets/Images/melanie-van-leeuwen-83775-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-7 {
+  background-image: url("assets/Images/francisco-moreno-110533-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-8 {
+  background-image: url("assets/Images/felix-russell-saw-106848-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-9 {
+  background-image: url("assets/Images/paulette-wooten-223050-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-10 {
+  background-image: url("assets/Images/wesley-tingey-223059-unsplash (1).jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-11 {
+  background-image: url("assets/Images/abigail-keenan-83615-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery .gallery__grid .gallery__img-12 {
+  background-image: url("assets/Images/ciprian-boiciuc-330413-unsplash.jpg");
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--contact {
+  background-color: #272727;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.section--contact .contact__container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.section--contact .contact__container .contact__management-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.section--contact .contact__container .contact__management-info .contact__social {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  padding-top: 15%;
+}
+
+.section--contact .contact__container .contact__management-info .contact__copyright {
+  padding-top: 10%;
+  font-size: 10px;
+  position: absolute;
+  bottom: 5%;
+}
+/*# sourceMappingURL=styles.css.map */

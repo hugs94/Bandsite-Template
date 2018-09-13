@@ -1,0 +1,394 @@
+//color section
+//non-discriptive. I could have named these properly. but this was easier to type
+$FF: #FFFFFF;
+$F9: #F9F9F9;
+$D7: #D7D7D7;
+$A0: #A0A0A0;
+$c27: #272727;
+$c00: #000000;
+
+body, html {
+  background-color: $FF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+// display flex mixin
+@mixin flex-betw() {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flex-arnd() {
+  display: flex;
+  justify-content: space-around;
+}
+@mixin flex-colmn() {
+  display: flex;
+  flex-direction: column;
+}
+
+// font styles/weights
+@mixin boldf() {
+  font-weight: 700;
+}
+@mixin semibf() {
+  font-weight: 600;
+}
+@mixin normif() {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 5.25rem;
+  @include boldf;
+}
+h2 {
+  font-size: 4rem;
+  @include boldf;
+  margin: 3% 0;
+}
+h3 {
+  font-size: 2.25rem;
+  @include normif();
+}
+h4 {
+  font-size: 1.5rem;
+}
+.p1 {
+  @extend h4;
+  @include normif();
+}
+.p2 {
+  font-size: 1.25rem;
+  @include normif();
+}
+.comments {
+  font-size: 0.875rem;
+}
+p {
+  margin: 0;
+}
+.usercomments {
+  font-size: 12px;
+}
+.buttonfont {
+  font-size: 1.125rem;
+  @include semibf();
+}
+
+// force button style
+button {
+  font-family: 'Poppins';
+  @extend .buttonfont;
+}
+
+// extended-ables
+section {
+  width: 100%;
+  box-sizing: border-box;
+  @include flex-colmn();
+  padding: 10% 8%;
+}
+.section__right {
+  padding-right: 5%;
+  line-height: 2.2em;
+  display: flex;
+}
+.section__left {
+  padding-right: 8%;
+  display: flex;
+}
+.container {
+  @include flex-arnd();
+}
+
+// responsive design space.
+  //to update when SVG images are provided.
+  // desktop
+@media (min-width: 961px) {
+    .body {
+      width: 100vw;
+      margin: 0 auto;
+    }
+  }
+    //tablet
+@media only screen and (min-width: 481px) and (max-width:960px) {
+    .container--about {
+      flex-direction: column;
+      .section__left--about{
+        padding: 5% 0;
+      }
+    }
+    .container--music {
+      flex-direction: column;
+      .section__right--music {
+        padding: 5% 0;
+     }
+    }
+  }
+    // mobile
+@media only screen and (max-width: 480px) {
+  .container--about {
+    flex-direction: column;
+    .section__left--about{
+      padding: 5% 0;
+    }
+  }
+  .container--music {
+    flex-direction: column;
+    .section__right--music {
+      padding: 5% 0;
+   }
+  }
+}
+
+
+@mixin buttonstyle() {
+  border: 4px solid $c00;
+  border-radius: 4px;
+  color: $FF;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+}
+// styles for page elements
+.header-hero {
+  background-image: url("Assets/Images/ana-grave-156852-unsplash.jpg");
+  height: 900px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  .navbar {
+    color: $FF;
+    background-color: rgba(255,255,255,0);
+    padding: 2% 8%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.125rem;
+    @include semibf;
+    .navbar__links {
+      width: 100vw;
+      @include flex-betw();
+      .navbar__right-side {
+        display: flex;
+        justify-content: flex-end;
+        .navbar__far-right {
+          margin-right: 10%;
+          margin-left: 40%;
+          color: $D7;
+        }
+      }
+    }
+  }
+}
+
+.album-info {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $FF;
+  &__date {
+    @extend h1;
+  }
+  &__text {
+    @extend h3;
+  }
+  &__button-holder {
+    padding: 20px 40px;
+    .album-info__button {
+      @include buttonstyle();
+      border-color: $FF;
+      background-color: rgba(255,255,255,0.4);
+      display: inline-block;
+      height: 55px;
+      width: 198px;
+    }
+  }
+}
+
+.section--about {
+    //@extend section;
+    .about {
+      &__title {
+        @extend h2;
+      }
+      .container--about {
+        //@extend .container;
+        .section__left--about {
+         // @extend .section__left;
+          line-height: 2em;
+          .p1--left{
+            @extend h4;
+            @include boldf();
+          }
+
+        }
+      }
+    }
+}
+
+
+.section--music {
+  // @extend section;
+  background-color: $F9;
+  .music{
+    &__title {
+      @extend h2;
+    }
+    .container--music {
+      //@extend .container;
+      padding-right: 10%;
+      align-items: stretch;
+
+      .section__left--bandcamp {
+        //@extend .section__left;
+        max-width: 326px;
+        max-height: 451px;
+      }
+      .section__right--music {
+        //@extend .section__right;
+
+        display: block;
+
+        .p1--music-bandname {
+         // @extend .p1;
+          @include boldf();
+          display: inline;
+        }
+        .p1--music-album {
+        //  @extend .p1;
+          display: inline;
+        }
+
+      }
+    }
+  }
+}
+
+
+@mixin gallery__img(){
+  width: 285px;
+  height: 285px;
+  margin: 2%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.section--gallery {
+  //@extend section;
+  justify-content: center;
+
+  .gallery {
+    &__title {
+      @extend h2;
+    }
+    &__grid {
+      @include flex-betw();
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding: 2% 0;
+
+      .gallery__img-1{
+        background-image: url("assets/Images/ian-dooley-281855-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-2{
+        background-image: url("assets/Images/ana-grave-156852-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-3{
+        background-image: url("assets/Images/hanny-naibaho-388579-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-4{
+        background-image: url("assets/Images/bryan-minear-315773-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-5{
+        background-image: url("assets/Images/mike-giles-5655-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-6{
+        background-image: url("assets/Images/melanie-van-leeuwen-83775-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-7{
+        background-image: url("assets/Images/francisco-moreno-110533-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-8{
+        background-image: url("assets/Images/felix-russell-saw-106848-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-9{
+        background-image: url("assets/Images/paulette-wooten-223050-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-10{
+        background-image: url("assets/Images/wesley-tingey-223059-unsplash (1).jpg");
+        @include gallery__img();
+      }
+      .gallery__img-11{
+        background-image: url("assets/Images/abigail-keenan-83615-unsplash.jpg");
+        @include gallery__img();
+      }
+      .gallery__img-12{
+        background-image: url("assets/Images/ciprian-boiciuc-330413-unsplash.jpg");
+        @include gallery__img();
+      }
+    }
+  }
+}
+
+
+
+
+
+.section--contact {
+  @extend section;
+  background-color: $c27;
+  color: $FF;
+  position: relative;
+  .contact {
+    &__title {
+      @extend h2;
+    }
+    &__container {
+      @include flex-betw();
+      align-content: center;
+
+      .contact__management-info {
+        @include flex-colmn();
+
+        .contact__social {
+          @include flex-betw();
+          width: 100%;
+          flex-direction: row;
+          padding-top: 15%;
+
+        }
+
+        .contact__copyright {
+          padding-top: 10%;
+          font-size: 10px;
+          position: absolute;
+          bottom: 5%;
+        }
+      }
+    }
+  }
+}
